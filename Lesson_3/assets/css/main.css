@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: mediumseagreen;
+    text-align: center;
+    background-color: azure;
+}
+header, nav, aside {
+    margin: 1em;
+    padding: 1em;
+    background-color: azure;
+}
+main {
+    display: flex;
+    margin: 1em;
+    justify-content: flex-start;
+    width: 97vw;
+    min-height: 100vh;
+    /* border: 1px solid cadetblue; */
+    /* border-radius: 2px; */
+}
+aside {
+    display: block;
+    width: 18vw;
+    min-height: 90vh;
+    border: 1px solid cadetblue;
+    border-radius: 2px;
+    /* float: left; */
+}
+section {
+    display: block;
+    width: 82vw;
+    min-height: 80vh;
+    /* border: 1px solid cadetblue; */
+    /* border-radius: 2px; */
+    /* float: left; */
+}
+/* section div {
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    float: left;
+} */
+span, p {
+    color: cadetblue;
+    text-align: center;
+}
+footer {
+    display: block;
+    min-height: 20vh;
+    margin: 1em;
+    padding: 1em;
+    background-color: slategray;
+}
+#modal_form {
+	min-width: 300px; 
+	min-height: 400px; /* Рaзмеры дoлжны быть фиксирoвaны */ 
+    max-width: 800px;
+    max-height: 1000px;
+    border-radius: 5px;
+	border: 2px #000 solid;
+	background: #fff;
+	position: fixed; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
+	top: 45%; /* oтступaем сверху 45%, oстaльные 5% пoдвинет скрипт */
+	left: 50%; /* пoлoвинa экрaнa слевa */
+	margin-top: -150px;
+	margin-left: -150px; /* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =) */
+	display: none; /* в oбычнoм сoстoянии oкнa не дoлжнo быть */
+	opacity: 0; /* пoлнoстью прoзрaчнo для aнимирoвaния */
+	z-index: 5; /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
+	padding: 30px 10px;
+}
+/* Кнoпкa зaкрыть модальное окно */
+#modal_form #modal_close {
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	display: block;
+}
+/* Пoдлoжкa */
+#overlay {
+	z-index:3; /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
+	position:fixed; /* всегдa перекрывaет весь сaйт */
+	background-color:#000; /* чернaя */
+	opacity:0.8; /* нo немнoгo прoзрaчнa */
+	-moz-opacity:0.8; /* фикс прозрачности для старых браузеров */
+	filter:alpha(opacity=80);
+	width:100%; 
+	height:100%; /* рaзмерoм вo весь экрaн */
+	top:0; /* сверху и слевa 0, oбязaтельные свoйствa! */
+	left:0;
+	cursor:pointer;
+	display:none; /* в oбычнoм сoстoянии её нет) */
+}
+a.button_view {
+    background-color: darkturquoise;
+    box-shadow: 2px 2px 1px cadetblue;
+    color: white;
+    padding: 0.4em 0.5em;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 3px;
+  }
+  a.button_view:hover {
+    background-color: cadetblue;
+    cursor: pointer;
+    color: lightgrey;
+  }
+  
+  a.button_view:active {
+    box-shadow: none;
+    top: 3px;
+  }
+
+  form.feedback {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+  }
+  form div {
+      min-height: 50px;
+  }
+  form label {
+      text-align: left;
+  }
+  form button {
+    text-transform: uppercase;
+  }
+  textarea {
+      margin: 15px 0px;
+  }
+  .card-columns {
+    @include media-breakpoint-only(lg) {
+      column-count: 4;
+    }
+    @include media-breakpoint-only(xl) {
+      column-count: 5;
+    }
+  }
+  /* карточки галереи */
+  .card-deck .card {
+    margin-bottom: 15px;
+    min-width: 210px;
+    width: 210px;
+  }
+  

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>{{title|upper|trim}}</title>
+</head>
+<body>
+
+    {% include 'head.inc' %}
+    {% include 'header.inc' %}
+    {% include 'nav.inc' %}
+
+    <main>
+        {% include 'aside.inc' %}
+        <section>
+            <!-- Навигация: хлебные крошки: -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <!-- <li class="breadcrumb-item"><a href="index.php">Главная</a></li> -->
+                    <li class="breadcrumb-item active" aria-current="page">{{title|upper|trim}}</li>
+                </ol>
+            </nav>
+
+
+            
+        </section>
+    </main>
+
+    {% include 'footer.inc' %}
+</body>
+</html>
