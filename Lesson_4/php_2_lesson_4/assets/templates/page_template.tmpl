@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <title>{{title|trim}}</title>
+</head>
+<body>
+
+    {% include 'head.inc' %}
+    {% include 'header.inc' %}
+    {% include 'nav.php' %}
+
+    <main>
+        {% include 'aside.inc' %}
+        <section>
+            <!-- Навигация: хлебные крошки: -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <!-- <li class="breadcrumb-item"><a href="index.php">Главная</a></li> -->
+                    <li class="breadcrumb-item active" aria-current="page">{{title|upper|trim}}</li>
+                </ol>
+            </nav>
+            <!-- Цикл подгрузки товаров для каталога -->
+            <div class="card-deck">
+            {% for key, image in images %}
+                <form class="card" action="cart-product-page.php" method="post" name="{{image.id}}">
+                <img src="{{image.thumbnail_path}}{{image.image_file_name}}" alt="{{image.image_name}}" action="cart-product-page.php" class="card-img-top" method="post" name="{{image.id}}">
+                
+                <div class="card-body">
+                    <h5 class="card-title">{{image.image_name}}</h5>
+                    <p class="card-text">{{image.price}} руб.</p>
+                    <p class="card-text"><small class="text-muted">Популярность: {{image.popularity}}</small></p>  
+                </div>
+                <div class="card-footer">
+                    <button name="id_product" value="{{image.id}}" class="btn btn-outline-secondary">Просмотр</a>
+                </div>    
+                </form>
+            {% endfor %}
+            </div>
+            <!-- Пагинация -->
+            <form class="card" action="gallery.php" method="post" name="gallery_pagination">
+                <div class="pagination">
+                    <input hidden name="current_page" value="{{current_page}}">
+                    <button name="pagination_button" class="page-item page-link" value="-1">Предыдущая</button>
+                    <button name="pagination_button" class="page-item page-link" value="1">Следующая</button>
+                </div>
+            </form>     
+
+        </section>
+    </main>
+
+    {% include 'footer.inc' %}
+</body>
+</html>
